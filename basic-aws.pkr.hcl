@@ -28,6 +28,6 @@ build {
   sources = ["source.amazon-ebs.create-image"]
 
   provisioner "shell" {
-    inline = ["sudo dnf update -y"]
+    inline = ["sudo dnf update -y", "sudo dnf install htop -y"]
   }
 }

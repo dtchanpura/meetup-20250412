@@ -23,7 +23,7 @@ source "amazon-ebs" "create-image" {
 
   // Force Packer to first deregister an existing AMI if one with the same name already exists. Default false.
   force_deregister = true
-  
+
   // Force Packer to delete snapshots associated with AMIs, which have been deregistered by force_deregister. Default false.
   force_delete_snapshot = true
 

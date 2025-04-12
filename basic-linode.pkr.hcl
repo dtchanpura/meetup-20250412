@@ -7,6 +7,8 @@ packer {
   }
 }
 
+// https://developer.hashicorp.com/packer/integrations
+
 variable "linode_api_token" {
   type        = string
   default     = "${env("LINODE_API_TOKEN")}"
@@ -15,14 +17,14 @@ variable "linode_api_token" {
 
 source "linode" "create-image" {
   image          = "linode/centos-stream9"
-  image_labe    = "basic-image"
+  image_label    = "basic-image-demo"
   
-  instance_label = "tmp-packer-centos-stream9"
+  instance_label = "tmp-packer-centos-stream9-demo"
   instance_type  = "g6-standard-1"
   linode_token   = "${var.linode_api_token}"
   region         = "ap-south"
   ssh_username   = "root"
-  ssh_private_key_file = "/home/darshil/.ssh/id_ed25519"
+//   ssh_private_key_file = "/home/darshil/.ssh/id_ed25519"
 }
 
 build {
